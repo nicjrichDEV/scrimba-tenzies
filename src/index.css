@@ -1,0 +1,101 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-background: #0b2434;
+  --color-foreground: #f5f5f5;
+  --color-dice-default: white;
+  --color-dice-locked: #59e391;
+  --color-accent: #5035ff;
+  --color-text-primary: #2b283a;
+  --color-text-secondary: #4a4e74;
+  --color-text-inverted: white;
+  --box-shadow-sm: 0 2px 2px rgba(0, 0, 0, 0.15);
+  --box-shadow-md: 0 3px 8px rgba(0, 0, 0, 0.18);
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+}
+
+body {
+  margin: 0;
+  background-color: #0b2434;
+  font-family: "Karla", sans-serif;
+}
+
+#root {
+  min-height: 100dvh;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-height: 400px;
+  max-width: 400px;
+  background-color: var(--color-foreground);
+  border-radius: var(--border-radius-lg);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.die-container {
+  gap: 16px;
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+}
+
+.die-face {
+  width: 50px;
+  height: 50px;
+  border: none;
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-box-trim: trim-both;
+  box-shadow: var(--box-shadow-sm);
+  color: var(--color-text-primary);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-dice-default);
+  cursor: pointer;
+  transition: background-color 100ms ease-in, color 50ms ease-in;
+  user-select: none;
+}
+
+.die-face:active {
+  background-color: var(--color-dice-locked);
+  color: var(--color-text-inverted);
+}
+
+.die-held {
+  background-color: var(--color-dice-locked);
+  color: var(--color-text-inverted);
+}
+
+.roll-btn {
+  background-color: var(--color-accent);
+  color: var(--color-text-inverted);
+  font-size: 1.25rem;
+  height: 40px;
+  border: none;
+  width: 128px;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--box-shadow-md);
+  font-weight: 500;
+  transition: scale 100ms ease-in;
+  letter-spacing: 0.5px;
+  text-box-trim: trim-both;
+}
+.roll-btn:active {
+  box-shadow: var(--box-shadow-sm);
+  scale: 0.95;
+}
