@@ -92,11 +92,12 @@ main {
   cursor: pointer;
   transition: background-color 100ms ease-in, color 50ms ease-in;
   user-select: none;
+  transition: scale 250ms ease-in;
 }
 
 .die-face:active {
   background-color: var(--color-dice-locked);
-  color: var(--color-text-inverted);
+  scale: 95%;
 }
 
 .die-held {
@@ -121,7 +122,7 @@ main {
 
 .roll-btn:active {
   box-shadow: var(--box-shadow-sm);
-  scale: 0.95;
+  scale: 98%;
 }
 
 .sr-only {
